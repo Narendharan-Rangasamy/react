@@ -1,2 +1,3 @@
 # react
-My first recat project
+My first react project
+Github commit practice
