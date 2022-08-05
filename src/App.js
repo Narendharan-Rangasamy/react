@@ -1,28 +1,32 @@
-import React from 'react';
+import React from 'react'
+import studentDetails from './data.json'
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
-      myarr: [{ studentID: 1001, studentName: "Naren", degree: "B.Sc IT", location: "Cbe", mobileNo: 12345 }]
-    }
+      heading : "Student Details",
+      studentData : studentDetails
+    };
   }
-  render(){
-    const { myarr } = this.state
-    return(
-      <>
-        {myarr.map((d,i) => {
+
+  render() {
+    const { studentData, heading } = this.state
+    return (
+      <React.Fragment>
+        <h1><u>{heading}</u></h1>
+        {studentData.map((data, index) => {
           return(
-            <div key={i}>
-              <h3>{d.studentID}</h3>
-              <h3>{d.studentName}</h3>
-              <h3>{d.degree}</h3>
-              <h3>{d.location}</h3>
-              <h3>{d.mobileNo}</h3>
+            <div key={index}>
+              <h2>{data.studentID}</h2>
+              <h2>{data.studentName}</h2>
+              <h3>{data.studentDegreee}</h3>
             </div>
+
           )
-        })}
-      </>
+        }
+        )}
+      </React.Fragment>
     )
   }
 }

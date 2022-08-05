@@ -1,0 +1,17 @@
+[
+    {
+        "studentID":"1001",
+        "studentName":"John",
+        "studentDegreee":"BE"
+    },
+    {
+        "studentID":"1002",
+        "studentName":"Chris",
+        "studentDegreee":"BTech"
+    },
+    {
+        "studentID":"1003",
+        "studentName":"Rob",
+        "studentDegreee":"BSc"
+    }
+]
