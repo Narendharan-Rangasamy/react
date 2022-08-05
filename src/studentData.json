@@ -1,0 +1,27 @@
+[
+    {
+        "studentID" : "1001",
+        "studentName" : "John",
+        "studentDegree" : "B.Sc"
+    },
+    {
+        "studentID" : "1002",
+        "studentName" : "Alex",
+        "studentDegree" : "BCA"
+    },
+    {
+        "studentID" : "1003",
+        "studentName" : "Peter",
+        "studentDegree" : "B.Com"
+    },
+    {
+        "studentID" : "1004",
+        "studentName" : "Chris",
+        "studentDegree" : "Bio Tech"
+    },
+    {
+        "studentID" : "1005",
+        "studentName" : "Watton",
+        "studentDegree" : "B.Arch"
+    }
+]
