@@ -1,30 +1,50 @@
-import React from 'react';
+import React from "react";
+import { render } from "react-dom";
+import studentData from "./studentData.json";
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
-      myarr: [{ studentID: 1001, studentName: "Naren", degree: "B.Sc IT", location: "Cbe", mobileNo: 12345 }]
-    }
+      heading: "Student Details",
+      studentDetails: studentData
+    };
   }
-  render(){
-    const { myarr } = this.state
-    return(
-      <>
-        {myarr.map((d,i) => {
-          return(
-            <div key={i}>
-              <h3>{d.studentID}</h3>
-              <h3>{d.studentName}</h3>
-              <h3>{d.degree}</h3>
-              <h3>{d.location}</h3>
-              <h3>{d.mobileNo}</h3>
+
+  //ComponentDidMount - It will run after the render part runs.
+  //The below hadning will be displayed after rnder heading runs with timeout as 3 secs
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        heading: "Student Details Table"
+      });
+    }, 3000);
+  }
+
+  //shouldComponentUpdate - Used to control DidComponeents. If it true it will execute or else it will not execute Didcomponents
+  // below will run componentDidMount because shouldComponentUpdate is true
+  shouldComponentUpdate() {
+    return true;
+  }
+
+  render() {
+    const { studentDetails, heading } = this.state;
+    return (
+      <React.Fragment>
+        <h1>
+          <u>{heading}</u>
+        </h1>
+        {studentDetails.map((data, index) => {
+          return (
+            <div key={index}>
+              <h2>{data.studentID}</h2>
+              <h2>{data.studentName}</h2>
+              <h2>{data.studentDegree}</h2>
             </div>
-          )
+          );
         })}
-      </>
-    )
+      </React.Fragment>
+    );
   }
 }
-
-export default App
+export default App;
