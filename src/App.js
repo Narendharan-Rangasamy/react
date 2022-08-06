@@ -21,7 +21,7 @@ class App extends React.Component{
     setTimeout(() => {
       this.setState({
         heading : "STUDENT DATA INFO",
-        studentDetails : studentData,
+        studentDetails : [],
         dataEmpty :true
       })
     }, 4000);
