@@ -19,7 +19,7 @@ function App(){
       });
       setSource({
         heading: "STUDENT DATA INFO",
-        studentDetails: studentDatagit,
+        studentDetails: studentData,
         dataEmpty: true
       });
     }, 4000);
