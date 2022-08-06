@@ -1,30 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react'
+import { useEffect } from 'react'
+import studentData from './studentData.json'
 
-class App extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      myarr: [{ studentID: 1001, studentName: "Naren", degree: "B.Sc IT", location: "Cbe", mobileNo: 12345 }]
-    }
-  }
-  render(){
-    const { myarr } = this.state
-    return(
-      <>
-        {myarr.map((d,i) => {
-          return(
-            <div key={i}>
-              <h3>{d.studentID}</h3>
-              <h3>{d.studentName}</h3>
-              <h3>{d.degree}</h3>
-              <h3>{d.location}</h3>
-              <h3>{d.mobileNo}</h3>
-            </div>
-          )
-        })}
-      </>
-    )
-  }
+function App(){
+  const [source, setSource] = useState({
+    heading : "STUDENT DETAILS",
+    studentDetails : [],
+    dataEmpty : false
+})
+  
+
+ // Below useEffect is used instead of componentDidMount while writting in function
+  //We have declared one common object called source and used it
+  useEffect(() => {
+    setTimeout(() => {
+      setSource({
+        dataEmpty: false
+      });
+      setSource({
+        heading: "STUDENT DATA INFO",
+        studentDetails: [],
+        dataEmpty: true
+      });
+    }, 4000);
+  });
+
+  const{studentDetails, heading, dataEmpty} = source
+  return(
+    <>
+    <h1><u>{heading}</u></h1>
+    {!studentDetails.length && !dataEmpty && <h2>loading..</h2>}
+    {dataEmpty && !studentDetails.length && <h2>Ops!! No data found</h2>}
+      {studentDetails.map((data, index) => {
+        return(
+          <div key={index}>
+              <h2>{data.studentID}</h2>
+              <h2>{data.studentName}</h2>
+              <h2>{data.studentDegree}</h2>
+          </div>
+        )
+      })}
+    </>
+  )
 }
 
 export default App
