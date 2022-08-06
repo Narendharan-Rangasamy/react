@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import studentData from "./studentData.json";
 
 class App extends React.Component {
